@@ -26,7 +26,7 @@ describe.each([
         await browser.close()
     })
 
-    it(browserType + ": should type out all inputs", async () => {
+    it(`${browserType}${headless ? "(headless)" : "(non-headless)"}: should type out all inputs`, async () => {
         // please launch in shell first:
         // `python3 -m http.server -d src`
         await page.goto("http://localhost:8000")
@@ -63,6 +63,6 @@ describe.each([
 
         expect(await page.$("text=I AM TOP OF PAGE")).not.toBeNull()
         expect(await page.$("text=I AM BOTTOM OF PAGE")).not.toBeNull()
-    })
+    }, 35000)
 })
 
