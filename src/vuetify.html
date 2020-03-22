@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-content>
+                <v-container>
+                    <v-row justify="center">
+                        <v-dialog v-model="dialog" persistent max-width="290">
+                            <template v-slot:activator="{ on }">
+                                <v-btn color="primary" dark v-on="on">Open Dialog</v-btn>
+                            </template>
+                            <v-card class="modal-content">
+                                <v-card-title class="headline">Use Google's location service?</v-card-title>
+                                <input type="text">
+                                <input type="text">
+                                <input type="text">
+                                <input type="text">
+                                <input type="text">
+
+                                <input type="number">
+                                <input type="number">
+                                <input type="number">
+                                <input type="number">
+                                <input type="number">
+
+                                <input type="email">
+                                <input type="email">
+                                <input type="email">
+                                <input type="email">
+                                <input type="email">
+                                <v-card-actions>
+                                    <v-spacer></v-spacer>
+                                    <v-btn color="green darken-1" text @click="dialog = false">Disagree</v-btn>
+                                    <v-btn color="green darken-1" text @click="dialog = false">Agree</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </v-dialog>
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data() {
+                return {
+                    dialog: false,
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
