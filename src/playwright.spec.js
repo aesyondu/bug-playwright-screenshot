@@ -33,20 +33,17 @@ describe.each([
 
         await page.click("button")
 
-        const modal = await page.waitForSelector("#myModal", {
+        const modal = await page.waitForSelector("#myModal .modal-content", {
             waitFor: "visible"
         })
 
-        await page.screenshot({ fullPage: true, path: `ss/${browserType + headless}1before.png` })
-
-        await page.type("input[type=number]", SOME_NUMBER)
+        await page.fill("input[type=number]", SOME_NUMBER)
         const texts = await page.$$("input[type=text]")
         for (let i = 0; i < texts.length; ++i) {
-            await texts[i].type(SOME_TEXT)
+            await texts[i].fill(SOME_TEXT)
         }
-        await page.type("input[type=email]", SOME_TEXT)
+        await page.fill("input[type=email]", SOME_TEXT)
 
-        await page.screenshot({ fullPage: true, path: `ss/${browserType + headless}2after.png` })
         await modal.screenshot({ path: `ss/${browserType + headless}3modal.png` })
         await modal.screenshot({ fullPage: true, path: `ss/${browserType + headless}4modalfull.png` })
 
