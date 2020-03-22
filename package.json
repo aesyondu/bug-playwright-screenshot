@@ -1,0 +1,16 @@
+{
+  "name": "playwright-screenshot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^25.1.0",
+    "playwright": "^0.11.1-next.1584853682027"
+  }
+}
