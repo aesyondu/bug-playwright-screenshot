@@ -49,7 +49,7 @@ function playwrightTest(browserType, headless, method) {
         let modal = null
         if (await page.$("button")) {
             await page.click("button")
-            modal = await page.waitForSelector(".modal-content", {
+            modal = await page.waitForSelector(".modal-body", {
                 waitFor: "visible"
             })
             await new Promise((resolve) => setTimeout(resolve, 500))
