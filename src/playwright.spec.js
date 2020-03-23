@@ -52,6 +52,7 @@ function playwrightTest(browserType, headless, method) {
             modal = await page.waitForSelector(".modal-content", {
                 waitFor: "visible"
             })
+            await new Promise((resolve) => setTimeout(resolve, 500))
         }
 
         const uniqueId = [browserType, headless ? "headless" : "non-headless", method, htmlFile].join("-")
